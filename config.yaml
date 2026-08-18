@@ -1,0 +1,43 @@
+# Live Speech-to-Text Retro Terminal Configuration
+
+# Display Settings
+# STT Settings
+stt:
+  model_path: "models/ggml-base.en.bin" # Local path to whisper model
+  language: "en"
+  pause_amount: 800 # Silence duration in ms to trigger segments
+  sample_rate: 16000
+  vad_threshold: 0.005 # Energy threshold for voice detection
+  beam_size: 5 # Beam search size for better accuracy
+  streaming_interval: 50 # Reduced for more aggressive live updates
+  clear_on_pause: false # Controlled via user requirement
+
+display:
+  font_size: 18
+  font_family: "Consolas"
+  glow_strength: 15
+  glow_color: "#00ffea"
+  text_color: "#00ffea"
+  background_color: "#000000"
+  background_opacity: 0.8
+  display_time_ms: 5000
+  show_timestamp: false # Optional timestamp display
+  typing_speed_ms: 5 # Faster typing to keep up with live speech
+  text_alignment: "center"
+  text_position: "bottom-center"
+  show_live_words: true
+  cursor_blink_ms: 500
+
+# Output Settings
+output:
+  mode: "live" # "live" (overwrites) or "timeline" (scrolling)
+  history_file: "speech_history.txt"
+  latest_file: "latest_speech.txt"
+
+# Window Settings
+window:
+  width: 600
+  height: 200
+  always_on_top: true
+  framed: false
+  hotkey: "f8" # Global toggle listening

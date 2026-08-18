@@ -1,0 +1,6 @@
+numpy
+sounddevice
+pywhispercpp
+PySide6
+keyboard
+pyyaml
